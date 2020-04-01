@@ -27,6 +27,8 @@ dependencies:
   firebase_auth:
   firebase_auth_web:
   google_sign_in:
+  cloud_firestore:
+  charts_flutter:
     
 dev_dependencies:
   flutter_test:

@@ -15,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
           children: <Widget>[
             RaisedButton(
               onPressed: (){
-                AuthService().signInWithEmail( "gtissington@gmail.com", "Paragl1d3" );
+                AuthService().signInWithEmail( "gtissington@gmail.com", "edgewise" );
               },
               child: Text("Login"),
             ),
