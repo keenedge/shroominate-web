@@ -29,7 +29,8 @@ dependencies:
   google_sign_in:
   cloud_firestore:
   charts_flutter:
-    
+  font_awesome_flutter: ^8.8.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

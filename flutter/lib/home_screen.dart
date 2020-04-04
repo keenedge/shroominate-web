@@ -1,9 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shroominate/auth_service.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
-
-import 'chart.dart';
+import 'package:shroominate/chart_screen.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,57 +10,54 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+//   List<Widget> _buildCells(List<DocumentSnapshot> docs) {
+//     return List.generate(
+//       docs.length,
+//       (index) => Container(
+//         alignment: Alignment.center,
+//         width: 120.0,
+//         height: 60.0,
+//         color: Colors.white,
+//         margin: EdgeInsets.all(4.0),
+//         child: Text(docs[index].data["timestamp"].toDate().toString(),
+//             style: Theme.of(context).textTheme.headline6),
+//       ),
+//     );
+//   }
+
+//   List<Widget> _buildRows(List<DocumentSnapshot> docs) {
+//     return List.generate(
+//       docs.length,
+//       (index) => Row(
+//         children: _buildCells(docs),
+//       ),
+//     );
+//   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          Center(
-            child: RaisedButton(
+        appBar: AppBar(
+          title: Text("Shroominate"),
+          actions: <Widget>[
+            IconButton(
               onPressed: () {
                 AuthService().signOut();
               },
-              child: Text("Sign out"),
+              icon: FaIcon(FontAwesomeIcons.signOutAlt),
             ),
-          ),
-          StreamBuilder<QuerySnapshot>(
-            stream: Firestore.instance.collection("Measurements").snapshots(),
-            builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-              if( !snapshot.hasData) return Text("Loading");
-              return Container(
-                child: Column( 
-                  children: <Widget>[
-                    Text(snapshot.data.documents[0]['Co2'].toString()),
-                    Text(snapshot.data.documents[0]['timestamp'].toString()),
-                  ]));
-              
-              // final data = [
-              //var x = snapshot.data.documents[0];
-              //   snapshot.data.documents[0]["RH"]
-              //   snapshot.data.documents[0]["Temp"]
-              // ];
-
-              // List<charts.Series> data = [
-              //   new charts.Series<DocumentSnapshot, String>(
-              //   id: 'Measurements',
-              //   colorFn: (_, __) => charts.MaterialPalette.blue.shadeDefault,
-              //   domainFn: (DocumentSnapshot snapshot, _) => snapshot["timestamp"].toString(),
-              //   measureFn: (DocumentSnapshot snapshot, _) => snapshot["Co2"],
-              //   data: snapshot.data.documents,
-              // )
-              // ];
-
-
-              // return Container(
-              //   child: SimpleBarChart( data ),
-              //   height: 200, width: 200,
-              // );
-              //     // Text( ),
-
-            })
-        ],
-      ),
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChartPage()),
+                );
+              },
+              icon: FaIcon(FontAwesomeIcons.chartLine),
+            )
+          ],
+        ),
+        body: Text("Home")
     );
   }
 }
-

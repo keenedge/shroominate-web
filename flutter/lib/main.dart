@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:shroominate/auth_service.dart';
+import 'package:shroominate/app.dart';
+import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 void main() {
-  runApp(MyApp());
-}
+  FlutterError.onError = (FlutterErrorDetails details) {
+    FlutterError.dumpErrorToConsole(details);
+    if (kReleaseMode)
+      exit(1);
+  };
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: AuthService().handleAuth(),
-    );
-  }
+  runApp(App());
 }

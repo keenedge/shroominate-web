@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "167686281726",
+    "firebase_url": "https://shroominate.firebaseio.com",
+    "project_id": "shroominate",
+    "storage_bucket": "shroominate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167686281726:android:43cd84ca04b37666ab48af",
+        "android_client_info": {
+          "package_name": "com.example.shroominate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "167686281726-nr0mhof0eni3o35dvs2dcuve3srd4vdh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shroominate",
+            "certificate_hash": "95a71e0136a00090e5dfdef386f098c55eda2b48"
+          }
+        },
+        {
+          "client_id": "167686281726-8ieguihlrdegbrjnvbskus56q5ls9g0c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBUQY55SAyHfjHigtiaSk9IshCoaUYucQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "167686281726-8ieguihlrdegbrjnvbskus56q5ls9g0c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
