@@ -12,20 +12,24 @@ jobs:
       - checkout
 
       - run:
+          working_directory: flutter
           name: Run Flutter doctor
           command: flutter doctor
 
       - run:
+          working_directory: flutter
           name: Run the application tests
           command: flutter test
 
       - run:
+          working_directory: flutter
           name: Build the Android version
           command: flutter build apk 
 
       - run:
+          working_directory: flutter
           name: Build the Android version
           command: flutter build web 
 
       - store_artifacts:
-          path: build/app/outputs/apk/release/app-release.apk
+          path: flutter/buld/web
